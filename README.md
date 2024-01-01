@@ -21,3 +21,5 @@ $$C_{low}=S(L)+\Delta S_{7}+\Delta S_{3}+\Delta S_{1}$$
 따라서 $C_{best}\leq C_{low}$이면 노드 7의 하위 노드를 탐색할 필요가 없다. 
 
 반대로 $C_{low} < C_{best}$ 이면 노드7의 하위 노드를 탐색해야 하므로 큐에 노드 7의 자식 노드 8과 9를 enqueue한다.
+
+# Sorted Insert Problem and RotateNode
