@@ -1,5 +1,7 @@
 [Reference] Erin Catto, Dynamic Bounding Volume Hierarchies, Blizzard Entertainment
 
+#Branch and Bound 알고리즘
+
 ![image](https://github.com/mekjh12/BVH2d/assets/122244587/4d1ff281-583b-4716-9493-cc661c301e1d)
 
 $C_7$의 비용은 다음과 같다.
