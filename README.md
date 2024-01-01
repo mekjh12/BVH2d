@@ -1,5 +1,9 @@
 [Reference] Erin Catto, Dynamic Bounding Volume Hierarchies, Blizzard Entertainment
 
+아래는 2d실행화면이다.
+
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/f6339f78-df93-42f4-a600-53b6f3e1e855)
+
 # Branch and Bound 알고리즘
 
 ![image](https://github.com/mekjh12/BVH2d/assets/122244587/4d1ff281-583b-4716-9493-cc661c301e1d)
