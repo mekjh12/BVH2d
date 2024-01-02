@@ -39,10 +39,10 @@ namespace BVH2d
             int topMargin = titleHeight;
             int leftMargin = this.button1.Right + padding;
             int widthDivide2 = (width - leftMargin) / 2;
-            int pcbHeight = height - topMargin - padding - 400;
+            int pcbHeight = height - topMargin - padding - 0;
             this.pcb1.Bounds = new Rectangle(leftMargin, topMargin, widthDivide2, pcbHeight);
             this.pcb2.Bounds = new Rectangle(leftMargin + widthDivide2 + padding, topMargin, widthDivide2, pcbHeight);
-            this.pcb3.Bounds = new Rectangle(pcb1.Left, pcb1.Bottom + padding, 2 * widthDivide2, 400);
+            this.pcb3.Bounds = new Rectangle(pcb1.Left, pcb1.Bottom + padding, 2 * widthDivide2, 0);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -55,9 +55,10 @@ namespace BVH2d
         private void DrawTree()
         {
             int depth = bvh.Depth;
-            Graphics g = Graphics.FromHwnd(this.pcb3.Handle);
+            Graphics g = Graphics.FromHwnd(this.pcb2.Handle);
             g.Clear(Color.Black);
-            bvh.Root?.DrawTree(g, new Pen(Color.Red, 2.0f), this.Width, -10 , true, depth);
+            //bvh.Root?.DrawTree(g, new Pen(Color.Red, 2.0f), this.Width, -10 , true, depth);
+            bvh.Root?.DrawTree2(g, new Pen(Color.Red, 2.0f), this.pcb2.Width/2, this.pcb2.Height / 2, 90, 180);
             g.DrawString("depth=" + depth, Node.Font9String, Brushes.Yellow, new PointF(10, 10));
 
             string rep = $"nodeNum={bvh.CountTotalNode}, leafNum={bvh.CountLeaf}";

@@ -54,7 +54,6 @@ namespace BVH2d
 
         public bool HasChild => (_child1 != null || _child2 != null);
 
-
         public bool HasChild1 => (_child1 != null);
 
         public bool HasChild2 => (_child2 != null);
@@ -218,7 +217,6 @@ namespace BVH2d
                 g.DrawRectangle(new Pen(_color, rootLineWidth), _box.LowerBound.x, _box.LowerBound.y, width, height);
                 g.DrawString($"({_guid})", Node.Font9String, _color, _box.LowerBound.x, _box.UpperBound.y - 13);
             }
-
         }
 
         [Obsolete("2d graphics를 위한 기능으로 3d확장에서는 필요가 없습니다.")]
@@ -248,6 +246,40 @@ namespace BVH2d
             }
             if (HasChild1) this.Child1.DrawTree(g, pen, mePosX, parentPosY + depthVariable, true, maxDepth);
             if (HasChild2) this.Child2.DrawTree(g, pen, mePosX, parentPosY + depthVariable, false, maxDepth);
+        }
+
+        [Obsolete("2d graphics를 위한 기능으로 3d확장에서는 필요가 없습니다.")]
+        public void DrawTree2(Graphics g, Pen pen, float mx, float my, float deg, float rotDeg)
+        {
+            float lineLength = 20.0f + 5.0f * _depth;
+            float lineLength0 = 20.0f + 5.0f * (_depth - 1);
+            deg = deg % 360;
+            pen.Brush = _color;
+
+            if (!IsRoot)
+            {
+                float c = cos(deg);
+                float s = sin(deg);
+                float shiftX = (deg - 90 > 180) ? 0 : -10;
+                float shiftY = (deg > 180) ? 0 : -10;
+                g.DrawString($"{_guid}", Font9String, _color, mx + shiftX, my + shiftY);
+                g.DrawLine(pen, mx, my, mx + lineLength0 * c , my + lineLength0 * s);
+            }
+            else
+            {
+                g.DrawString($"({_guid})", Font9String, _color, mx, my);
+            }
+
+            rotDeg /= 2;
+            rotDeg = Math.Max(15, rotDeg);
+
+            if (HasChild1)
+                this.Child1.DrawTree2(g, pen, mx - 0.8f * lineLength * cos(deg - rotDeg), my - 0.8f * lineLength * sin(deg - rotDeg), deg - rotDeg, rotDeg);
+            if (HasChild2)
+                this.Child2.DrawTree2(g, pen, mx - 1.2f * lineLength * cos(deg + rotDeg), my - 1.2f * lineLength * sin(deg + rotDeg), deg + rotDeg, rotDeg);
+
+            float cos(float degree) => (float)Math.Cos(degree * 3.141502f / 180.0f);
+            float sin(float degree) => (float)Math.Sin(degree * 3.141502f / 180.0f);
         }
 
         public void Print(string txt = "")
