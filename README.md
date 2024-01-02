@@ -36,5 +36,8 @@ $$C_{low}=S(L)+\Delta S_{7}+\Delta S_{3}+\Delta S_{1}$$
 Tree rotations : Re-arranging a tree to reduce the SAH cost
 Tree rotations are used for AVL trees to keep them balanced. They can also be used for bounding volume hierarchies to reduce the surface area and to mitigate the problems introduced by sorted input.
 
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/b7bdbc2f-726a-45f8-a9fa-b6251388409d)
 
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/0923e280-b148-4578-a8c0-f6b09faf93d3)
 
+네 가지 경우에 cost가 더 적으면 RotateNode를 통하여 트리를 최적화한다.
