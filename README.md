@@ -1,8 +1,11 @@
 [Reference] Erin Catto, Dynamic Bounding Volume Hierarchies, Blizzard Entertainment
 
-아래는 2d실행화면이다. 47번 노드가 이동 중 EnhanceBox와 충돌하여 노드를 제거하고 새롭게 노드를 추가해 준다.
-
+아래는 2d실행화면이다. 
 ![image](https://github.com/mekjh12/BVH2d/assets/122244587/04564aeb-2c5f-496b-8174-bd9feeb0d075)
+
+21번 노드가 이동 중 EnhanceBox와 충돌하여 노드를 제거하고 새롭게 노드를 추가해 준다.
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/9cc26fab-17ab-4090-9620-226fc2313557)
+
 
 # Branch and Bound 알고리즘
 
