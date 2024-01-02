@@ -30,3 +30,11 @@ $$C_{low}=S(L)+\Delta S_{7}+\Delta S_{3}+\Delta S_{1}$$
 반대로 $C_{low} < C_{best}$ 이면 노드7의 하위 노드를 탐색해야 하므로 큐에 노드 7의 자식 노드 8과 9를 enqueue한다.
 
 # Sorted Insert Problem and RotateNode
+
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/5642ef1b-e00d-4d0e-993f-5dad449f2d83)
+
+Tree rotations : Re-arranging a tree to reduce the SAH cost
+Tree rotations are used for AVL trees to keep them balanced. They can also be used for bounding volume hierarchies to reduce the surface area and to mitigate the problems introduced by sorted input.
+
+
+
