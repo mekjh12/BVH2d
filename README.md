@@ -1,5 +1,14 @@
 [Reference] Erin Catto, Dynamic Bounding Volume Hierarchies, Blizzard Entertainment
 
+아래는 2d실행화면이다. 
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/04564aeb-2c5f-496b-8174-bd9feeb0d075)
+
+21번 노드가 이동 중 EnhanceBox와 충돌하여 노드를 제거하고 새롭게 노드를 추가해 준다.
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/9cc26fab-17ab-4090-9620-226fc2313557)
+
+
+# Branch and Bound 알고리즘
+
 ![image](https://github.com/mekjh12/BVH2d/assets/122244587/4d1ff281-583b-4716-9493-cc661c301e1d)
 
 $C_7$의 비용은 다음과 같다.
@@ -19,3 +28,16 @@ $$C_{low}=S(L)+\Delta S_{7}+\Delta S_{3}+\Delta S_{1}$$
 따라서 $C_{best}\leq C_{low}$이면 노드 7의 하위 노드를 탐색할 필요가 없다. 
 
 반대로 $C_{low} < C_{best}$ 이면 노드7의 하위 노드를 탐색해야 하므로 큐에 노드 7의 자식 노드 8과 9를 enqueue한다.
+
+# Sorted Insert Problem and RotateNode
+
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/5642ef1b-e00d-4d0e-993f-5dad449f2d83)
+
+Tree rotations : Re-arranging a tree to reduce the SAH cost
+Tree rotations are used for AVL trees to keep them balanced. They can also be used for bounding volume hierarchies to reduce the surface area and to mitigate the problems introduced by sorted input.
+
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/b7bdbc2f-726a-45f8-a9fa-b6251388409d)
+
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/0923e280-b148-4578-a8c0-f6b09faf93d3)
+
+네 가지 경우에 cost가 더 적으면 RotateNode를 통하여 트리를 최적화한다.
