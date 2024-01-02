@@ -2,7 +2,7 @@
 
 아래는 2d실행화면이다. 47번 노드가 이동 중 EnhanceBox와 충돌하여 노드를 제거하고 새롭게 노드를 추가해 준다.
 
-![image](https://github.com/mekjh12/BVH2d/assets/122244587/fc5e0d19-9b29-4915-8f71-a5ecdb7926da)
+![image](https://github.com/mekjh12/BVH2d/assets/122244587/04564aeb-2c5f-496b-8174-bd9feeb0d075)
 
 # Branch and Bound 알고리즘
 
